@@ -1,0 +1,25 @@
+[V0.1.1]
+1) Use GPIO14 for kxtf9 interruput source. (linux-davinci/src)
+2) Update firmware generate makefile.  (smboot/Makefile)
+3) update kws (kws/src)
+4) update itbrg for pid (itbrg)
+5) Medusa update pid config for both qinbao and mini_qinbao  (medusa)
+6) Adjust motor max speed parameter for mini_qinbao (ksysconfig)
+7) update install_to_mmc.sh  (smboot/mmc_deploy_tool/install_to_mmc)
+8) fix a bug for medusa: mini_qinbao power supply method not work  (medusa/src)
+9) add support for mini_qinbao in smart project (smart/)
+10) add netmon hook for mini_qinbao and fix some bugs (netmon)
+11) add move_speed and spin_speed option to medusa anbao_action config (medusa/src)
+12) update dm365_adc for read block issue (dm365_adc)
+13) update fw for ecoflasher need fw functions (fw/src)
+14) add project ecoflasher
+15) update compat-wireless, use random mac addr when no mac found (compat-wireless)
+16) Add factory set parameter script: fp.sh	(smboot/crosssInstallOverlay)
+17) update libchunfeng, add some file related functions (libchunfeng/src)
+18) update medusa, use pid from IIC eeprom
+
+[V0.1.2]
+1) update linux-davinci/.config, add CGroup support (linux-davinci)
+2) update libchunfeng for fd leak in CFFdeventsExit (libchunfeng/src)
+3) update compat-wireless for connection delay bug (compat-wireless)
+4) change ov7725 settings (ksysconfig)

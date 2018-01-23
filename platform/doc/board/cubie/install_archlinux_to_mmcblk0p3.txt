@@ -1,0 +1,9 @@
+base system packages
+======================================
+pacman -Sy systemd pacman iproute2 vi iputils wget --config /tmp/pacman.conf  -r /tmp/new_root/ --cache /tmp
+ln -s ../bin/systemd /tmp/new_root/sbin/init
+cp -a /boot/* /tmp/new_root/boot/
+
+ip addr add 172.21.15.22/24 dev eth0
+ip link set dev eth0 up
+ip route add 10.6.0.0/16 via 10.3.23.254 dev eth0

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+for i in `echo ${SUB_PROJS}`; do
+	echo '************************************'
+	echo    "$i"
+	echo '************************************'
+	if [ -d "${PLATFORM_DIR}/../$i/src" ]
+	then
+		echo "===> Building $i ..."
+		cd "${PLATFORM_DIR}/../$i" && ${MAKE} build || exit 1
+		echo "===> Installing $i ..."
+		cd "${PLATFORM_DIR}/../$i" && ${MAKE} install || exit 1
+	else
+		if [ ! -d "${PLATFORM_DIR}/../$i/install" ]
+		then
+            echo "===> Fetching package $i ..."
+			cd "${PLATFORM_DIR}/../$i" && ${MAKE} fetchPkg
+		fi
+	fi
+done
+

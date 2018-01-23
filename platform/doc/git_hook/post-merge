@@ -1,0 +1,17 @@
+#!/bin/sh
+# verson: v0.0.1
+# author: jack.haung@ecovacs.com
+#set -x 
+
+CHANGED_PORJECTS="$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD | sed -n -e '/smboot/d' -e '/platform/d' -e '/Makefile/p' )"
+ROOT_DIR=`git rev-parse --show-toplevel`
+
+if [ -z "${CHANGED_PORJECTS}" ]
+then
+	exit 0;
+fi
+
+for project in ${CHANGED_PORJECTS}; do
+	PRJ_DIR=$(dirname $project)
+	cd ${ROOT_DIR}/${PRJ_DIR} && make fetchPkg 
+done

@@ -1,0 +1,10 @@
+Build dependences
+=================
+Please install following packeges withing your linux distribution:
+make gcc mono mtd-tools(or mtd-utils) partclone
+
+how to configure
+================
+If you use SVN Server to maintain your source code,you should add SVN_SRV_USER param
+./configure REMOTE_HOST=192.168.10.10 BOARD=rk3188 SVR_DEF_USER=your_git_account  RK3188_BOOT_MODE=sdcard|nand-emmc ROOTFS_TYPE=ext4|squashfs ENABLE_ECO_ENCRYPT=yes|no
+
